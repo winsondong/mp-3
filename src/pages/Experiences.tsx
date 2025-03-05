@@ -2,6 +2,8 @@ import { Header } from "../components/Header";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 
+import { DynamicTitle } from "../components/DynamicTitle";
+
 import { 
     StyledContainer,
     StyledMain,
@@ -17,6 +19,7 @@ import {
 export function Experiences() {
   return (
     <>  
+        <DynamicTitle />
         <Header />
         <StyledContainer>
         <Nav />

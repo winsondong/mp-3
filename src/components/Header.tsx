@@ -5,8 +5,12 @@ const StyledHeader = styled.header`
     background-color: #0033a0;
     color: #ffffff;
     padding: 1% 2%;
-`;
 
+    @media screen and (max-width: 750px) { 
+        justify-content: center;
+        align-items: center;
+    }
+`;
 
 const HeaderContainer = styled.div`
     display: flex;

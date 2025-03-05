@@ -5,6 +5,8 @@ import { Header } from "../components/Header";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 
+import { DynamicTitle } from "../components/DynamicTitle";
+
 import { StyledMain, StyledContainer, SectionTitle } from "../StyledComponents";
 
 const HomeContainer = styled.div`
@@ -35,7 +37,8 @@ const HomeLink = styled(Link)`
 
 export function Home() {
   return (
-    <>
+      <>
+        <DynamicTitle />
         <Header />
         <StyledContainer>
         <Nav />
@@ -54,6 +57,6 @@ export function Home() {
 
   
         <Footer />
-    </>
+      </>
   );
 }

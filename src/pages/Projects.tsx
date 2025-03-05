@@ -2,6 +2,8 @@ import { Header } from "../components/Header";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 
+import { DynamicTitle } from "../components/DynamicTitle";
+
 import { Calculator } from "../components/Calculator";
 
 import {
@@ -24,6 +26,7 @@ export function Projects() {
     
   return (
     <>  
+        <DynamicTitle />
         <Header />
         <StyledContainer>
         <Nav />

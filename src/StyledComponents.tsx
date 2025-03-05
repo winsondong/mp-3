@@ -11,11 +11,19 @@ export const StyledMain = styled.main`
   background-color: #f5faff;
   width: 70%;
   min-height: 100vh;
+
+   @media screen and (max-width: 750px) { 
+        width: 100%;
+    }
 `;
 
 export const StyledContainer = styled.div`
     display: flex;
     width: 100%;
+
+    @media screen and (max-width: 750px) { 
+        flex-direction: column;
+    }
 `;
 
 

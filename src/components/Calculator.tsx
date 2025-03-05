@@ -66,10 +66,11 @@ export const OutputParagraph = styled.p`
 
 export const OutputH3 = styled.h3`
     font-size: calc(14px + 0.4vw);
-    color: #005bbb;
     padding-top: 0.7vh;
     margin-top: 0.7vh;
 `;
+
+
 
 export function Calculator(){
     const [firstNumber, setFirstNumber] = useState<string>("");
@@ -122,8 +123,7 @@ export function Calculator(){
                 </ButtonContainer>
                 
                 <OutputParagraph><strong>Output:</strong></OutputParagraph>
-                <OutputH3>{String(output)}</OutputH3>
-
+                <OutputH3 style={{ color: Number(output) < 0 ? "red" : "#005bbb" }}>{String(output)}</OutputH3>
 
             </CalculatorContainer>
         

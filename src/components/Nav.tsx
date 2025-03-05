@@ -7,6 +7,10 @@ const StyledNav = styled.nav`
   width: 30%;
   background-color: #005bbb;
   padding: 1% 0;
+
+  @media screen and (max-width: 750px) { 
+        width: 100%;
+    }
 `;
 
 const NavList = styled.ul`
@@ -17,6 +21,13 @@ const NavList = styled.ul`
   gap: 2.5vw;
   list-style-type: none;
   margin: 0;
+
+  @media screen and (max-width: 750px) { 
+        flex-direction: row;
+        padding: 2%;
+        width: 100%;
+        gap: 1%;
+    }
 `;
 
 const NavItem = styled.li`
@@ -26,6 +37,11 @@ const NavItem = styled.li`
   &:hover {
     background-color: #a7c1f9;
   }
+
+  @media screen and (max-width: 750px) { 
+        display: flex;
+        width: 100%;
+    }
 `;
 
 const NavLink = styled(Link)`
@@ -43,6 +59,14 @@ const NavLink = styled(Link)`
   &:hover {
     color: gold;
   }
+
+  @media screen and (max-width: 750px) { 
+        display: flex;
+        width: 100%;
+        font-size: calc(4px + 1vw);
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export function Nav() {
