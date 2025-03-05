@@ -2,12 +2,6 @@ import styled from "styled-components";
 
 
 /* styling the whole page */
-export const StyledBody = styled.body`
-  background-color: #002366;
-  color: #333;
-  width: 70%;
-  margin: 0 auto;
-`;
 
 export const StyledMain = styled.main`
   display: flex;

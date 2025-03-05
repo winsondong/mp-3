@@ -3,7 +3,6 @@ import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 
 import { 
-    StyledBody,
     StyledContainer,
     StyledMain,
 
@@ -16,12 +15,10 @@ import {
 } from "../StyledComponents"
 
 
-
-
 export function Skills() {
   return (
     <>  
-        <StyledBody>
+      
             <Header />
             <StyledContainer>
             <Nav />
@@ -62,7 +59,7 @@ export function Skills() {
             </StyledMain>
             </StyledContainer>
             <Footer />
-        </StyledBody>
+   
     </>
   );
 }

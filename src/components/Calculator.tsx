@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
+
 export const CalculatorContainer = styled.div`
     width: 35%;
     background: #ffffff;
@@ -71,16 +72,15 @@ export const OutputH3 = styled.h3`
 `;
 
 export function Calculator(){
-    const [firstNumber, setFirstNumber] = useState<number | string>(0);
-    const [secondNumber, setSecondNumber] = useState<number | string>(0);
-    const [output, setOutput] = useState<number | string>(0);
+    const [firstNumber, setFirstNumber] = useState<string>("");
+    const [secondNumber, setSecondNumber] = useState<string>("");
+    const [output, setOutput] = useState<string>("");
    
 
-    
-    const myAdd = () => setOutput(Number(firstNumber) + Number(secondNumber))
-    const mySubtract = () => setOutput(Number(firstNumber) - Number(secondNumber))
-    const myMultiply = () => setOutput(Number(firstNumber) * Number(secondNumber))
-    const myDivide = () => setOutput(Number(secondNumber) !== 0 ? (Number(firstNumber) / Number(secondNumber)) : "Error");
+    const myAdd = () => setOutput(String(Number(firstNumber) + Number(secondNumber)));
+    const mySubtract = () => setOutput(String(Number(firstNumber) - Number(secondNumber)));
+    const myMultiply = () => setOutput(String(Number(firstNumber) * Number(secondNumber)));
+    const myDivide = () => setOutput(String(Number(secondNumber) !== 0 ? (Number(firstNumber) / Number(secondNumber)) : "Error"));
     const myPower = () => {
         let result = 1;
         if (Number(secondNumber) >= 0) {
@@ -93,7 +93,7 @@ export function Calculator(){
             }
             result = 1 / result;
         }
-        setOutput(result);
+        setOutput(String(result));
     };
     const myClear = () => {
         setFirstNumber("");
@@ -102,28 +102,30 @@ export function Calculator(){
     };
 
     return (
-        <CalculatorContainer>
-            <InputSection>
-                <Label htmlFor="first-number">First Number:</Label>
-                <Input type="number" id="first-number" value={firstNumber} onChange={(e) => setFirstNumber(Number(e.target.value))}></Input>
-                <Label htmlFor="second-number">Second Number:</Label>
-                <Input type="number" id="second-number" value={secondNumber} onChange={(e) => setSecondNumber(Number(e.target.value))}></Input>
+        
+            <CalculatorContainer>
+                <InputSection>
+                    <Label htmlFor="first-number">First Number:</Label>
+                    <Input type="number" id="first-number" value={firstNumber} onChange={(e) => setFirstNumber(e.target.value)}></Input>
+                    <Label htmlFor="second-number">Second Number:</Label>
+                    <Input type="number" id="second-number" value={secondNumber} onChange={(e) => setSecondNumber(e.target.value)}></Input>
 
-            </InputSection>
+                </InputSection>
 
-            <ButtonContainer>
-                <CalcButton onClick={myAdd}>+</CalcButton>
-                <CalcButton onClick={mySubtract}>-</CalcButton>
-                <CalcButton onClick={myMultiply}>*</CalcButton>
-                <CalcButton onClick={myDivide}>/</CalcButton>
-                <CalcButton onClick={myPower}>**</CalcButton>
-                <CalcButton onClick={myClear}>Clear</CalcButton>
-            </ButtonContainer>
-            
-            <OutputParagraph><strong>Output:</strong></OutputParagraph>
-            <OutputH3>{output}</OutputH3>
+                <ButtonContainer>
+                    <CalcButton onClick={myAdd}>+</CalcButton>
+                    <CalcButton onClick={mySubtract}>-</CalcButton>
+                    <CalcButton onClick={myMultiply}>*</CalcButton>
+                    <CalcButton onClick={myDivide}>/</CalcButton>
+                    <CalcButton onClick={myPower}>**</CalcButton>
+                    <CalcButton onClick={myClear}>Clear</CalcButton>
+                </ButtonContainer>
+                
+                <OutputParagraph><strong>Output:</strong></OutputParagraph>
+                <OutputH3>{String(output)}</OutputH3>
 
 
-        </CalculatorContainer>
+            </CalculatorContainer>
+        
     );
 }

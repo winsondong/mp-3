@@ -5,7 +5,7 @@ import { Header } from "../components/Header";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 
-import { StyledBody, StyledMain, StyledContainer, SectionTitle } from "../StyledComponents";
+import { StyledMain, StyledContainer, SectionTitle } from "../StyledComponents";
 
 const HomeContainer = styled.div`
   display: flex;
@@ -36,7 +36,6 @@ const HomeLink = styled(Link)`
 export function Home() {
   return (
     <>
-        <StyledBody>
         <Header />
         <StyledContainer>
         <Nav />
@@ -52,9 +51,9 @@ export function Home() {
                 </HomeContainer>
         </StyledMain>
         </StyledContainer>
+
+  
         <Footer />
-        
-        </StyledBody>
     </>
   );
 }
